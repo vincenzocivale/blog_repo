@@ -3,35 +3,22 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-AstroPaper is a minimal, accessible and SEO-friendly blog theme built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+## Who I Am
 
-![Astro Paper](public/astropaper-og.jpg)
+I'm a PhD student in Biomedical Engineering, with a focus on applying machine learning techniques to provide personalized diagnostic systems. My work spans from **computer vision** on histological images to models based on **omics data**.
 
-AstroPaper provides a solid foundation for blogs, or even portfolios\_ with full markdown support, built-in dark mode, and a clean layout that works out-of-the-box.
+This blog, **BME Notebook**, is my personal log of what I'm currently studying and working on.
 
-The blog posts in this theme also serve as guides, docs or example articles\_ making AstroPaper a flexible starting point for your next content-driven site.
+## The Purpose of This Blog
 
-## Features
+The primary goal of this space is not monetization, but rather a "gentle nudge" to keep my learning active and consistent. It's a place where I'm not just passively reading papers, but actively working to internalize them. As Richard Feynman famously said, the best way to learn something is to explain it in simple terms. By writing these posts, I'm testing my own understanding and reinforcing my knowledge.
 
-AstroPaper comes with a set of useful features that make content publishing easy and effective:
+Publishing my thoughts publicly also helps me stay on a regular schedule, provides an avenue for constructive feedback, and allows me to connect with fellow researchers and experts who can offer new perspectives or correct potential errors.
 
-- SEO-friendly
-- Fast performance
-- Light & dark mode
-- Highly customizable
-- Organizable blog posts
-- Responsive & accessible
-- Static search with [PageFind](https://pagefind.app/)
-- Automatic social image generation
+## What You'll Find Here
 
-and so much more.
+I aim to share my notes on research papers that I find particularly interesting, as well as on my own projects. I'll present complex topics in a simple, yet accurate, way.
 
-## Show your support
+While the topics here are limited to my specific interests and don't encompass the entirety of biomedical engineering, I hope this blog can serve as an accessible starting point for those new to the field. Consider it a resource to find initial inspiration and resources without needing an extensive academic background.
 
-If you like [AstroPaper](https://github.com/satnaing/astro-paper), consider giving it a star ⭐️.
-
-Found a bug 🐛 or have an improvement ✨ in mind? Feel free to open an [issue](https://github.com/satnaing/astro-paper/issues), submit a [pull request](https://github.com/satnaing/astro-paper/pulls) or start a [discussion](https://github.com/satnaing/astro-paper/discussions).
-
-If you find this theme helpful, you can also [sponsor me on GitHub](https://github.com/sponsors/satnaing) or [buy me a coffee](https://buymeacoffee.com/satnaing) to show your support — every penny counts.
-
-Kyay zuu! 🙏🏼
+Ultimately, this is a record of my learning journey. It's an invitation to others to join the conversation.
