@@ -2,8 +2,8 @@ export const SITE = {
   website: "https://astro-paper.pages.dev/", // replace this with your deployed domain
   author: "Vincenzo Yuto Civale",
   profile: "www.linkedin.com/in/vincenzo-civale",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
-  title: "AstroPaper",
+  desc: "A biomedical engineer's notes on interesting insights.",
+  title: "BME Notebook",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
