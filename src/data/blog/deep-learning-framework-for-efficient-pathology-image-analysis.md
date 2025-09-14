@@ -9,6 +9,7 @@ draft: false
 tags:
   - Computational-Pathology
   - Computer-Vision
+  - Paper-Review
 description:
   EAGLE, a deep learning framework, efficiently analyzes whole-slide pathology images, achieving an average AUROC of 0.742 across 31 tasks while processing images over 99% faster than previous methods by focusing on critical regions.
 ---
