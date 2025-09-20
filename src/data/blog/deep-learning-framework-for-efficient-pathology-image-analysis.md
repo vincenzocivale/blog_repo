@@ -33,13 +33,14 @@ EAGLE analyzes each WSI in two stages:
 
 2. **Fine Analysis:** The top 25 most informative tiles, as indicated by the attention matrix, are re-analyzed using a more powerful tile encoder (Virchow2). These refined embeddings are aggregated to produce a final vector, which is used to generate the slide-level prediction.
 
-![Two-step workflow of EAGLE. Step 1: coarse slide-level analysis identifies informative tiles. Step 2: high-resolution analysis of selected tiles generates embeddings for final prediction.](@/assets\images\2025\deep-learning-framework-for-efficient-pathology-image-analysis\eagle_model.png)
+![Two-step workflow of EAGLE. Step 1: coarse slide-level analysis identifies informative tiles. Step 2: high-resolution analysis of selected tiles generates embeddings for final prediction.](@/assets/images/2025/deep-learning-framework-for-efficient-pathology-image-analysis/eagle_model.png)
+
 
 ## Comprehensive Benchmarking
 
 The authors conducted extensive benchmarking across 31 tasks spanning four major cancer types: breast cancer (BRCA), colorectal cancer (CRC), gastric cancer (STAD), and non-small cell lung cancer (NSCLC). Tasks included morphological classification, biomarker prediction, and prognostic assessment.
 
-![Performance Benchmark Overview.](@/assets\images\2025\deep-learning-framework-for-efficient-pathology-image-analysis\eagle_result.png)
+![Performance Benchmark Overview.](@/assets/images/2025/deep-learning-framework-for-efficient-pathology-image-analysis/eagle_result.png)
 
 EAGLE was compared against 12 state-of-the-art baseline models, including both slide-level encoders (TITAN, COBRA, CHIEF, Prism, MADELEINE, Prov-GigaPath) and tile-level encoders (Virchow2, CONCH v1.5, CONCH, Prov-GigaPath, CTransPath, Virchow). All models were evaluated using 5-fold cross-validation on TCGA datasets, with external validation on independent cohorts (CPTAC, DACHS, Kiel, Bern, IEO) to ensure generalizability.
 
@@ -57,7 +58,7 @@ EAGLE demonstrated remarkable results across several dimensions:
 
 A key advantage of EAGLE is its improved interpretability. Review by certified pathologists revealed that tiles selected by EAGLE contained significantly fewer artifacts than the supervised baselines (22% vs 32% general artifacts, 1% vs 15% pen marks). The framework consistently focused on the most representative tumor tissue, whereas baseline methods often included a confusing mix of healthy, tumor, and artifact-rich regions.
 
-![Interpretability comparison showing EAGLE's tile selections (left columns) versus supervised baseline selections (right columns) for microsatellite instability (MSI) and microsatellite stable (MSS) cases, demonstrating EAGLE's superior focus on relevant tissue regions.](@/assets/images/2025/deep-learning-framework-for-efficient-pathology-image-analysis\interpretability.jpeg)
+![Interpretability comparison showing EAGLE's tile selections (left columns) versus supervised baseline selections (right columns) for microsatellite instability (MSI) and microsatellite stable (MSS) cases, demonstrating EAGLE's superior focus on relevant tissue regions.](@/assets/images/2025/deep-learning-framework-for-efficient-pathology-image-analysis/interpretability.jpeg)
 
 UMAP visualizations showed that EAGLE generates meaningful slide embeddings that effectively capture morphological diversity and enable clear separation by cancer type. The framework also supports efficient slide retrieval for similar-case searches, facilitating rapid diagnosis and cohort assembly.
 

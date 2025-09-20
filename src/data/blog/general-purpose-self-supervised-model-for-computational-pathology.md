@@ -43,7 +43,7 @@ Preprocessing steps included tissue segmentation, artefact removal and patch sel
 
 UNI adopts a **ViT-L/16 backbone** trained with a **student–teacher DINOv2 framework**. The student receives masked image crops, while the teacher processes full versions. Learning objectives include aligning the predictions of the two models and reconstructing masked tokens.  
 
-![The self-supervised learning approach used to train UNI that included masked image modelling and knowledge distillation.](@/assets\images\2025\general-purpose-self-supervised-model-for-computational-pathology\training_scheme.png)
+![The self-supervised learning approach used to train UNI that included masked image modelling and knowledge distillation.](@/assets/images/2025/general-purpose-self-supervised-model-for-computational-pathology/training_scheme.png)
 
 The training pipeline incorporates temperature scheduling, codebook regularisation and high-resolution fine-tuning, as well as optimisers such as AdamW. To ensure efficiency, positional embeddings are interpolated for multi-resolution inputs, and attention implementations are optimised for long sequences.  
 
@@ -73,7 +73,7 @@ In computational pathology, data annotation often poses the greatest challenge, 
 - **At the whole slide (WSI) level**: UNI can match or exceed the performance of state-of-the-art models with four to eight times fewer annotations. This efficiency in slide-level classification — a task that is clinically relevant — is critical for accelerating the development and implementation of AI systems in pathology.
 - **Prototype-based classification**: An innovative feature of UNI is its capacity to perform precise slide-level classifications using class prototypes without the need for further training. This approach simplifies the process and provides interpretable heat maps aligned with relevant diagnostic regions, offering transparency and confidence in the model's predictions.
 
-![Zero-shot performance of UNI.](@/assets\images\2025\general-purpose-self-supervised-model-for-computational-pathology\zero-shot.png)
+![Zero-shot performance of UNI.](@/assets/images/2025/general-purpose-self-supervised-model-for-computational-pathology/zero-shot.png)
 
 The efficiency of data usage described in the paper can be explained by three main factors.
 
@@ -91,7 +91,7 @@ In computational pathology, diagnostic reasoning requires the ability to conside
 
 The model's attention maps clearly demonstrate this adaptability, as well as UNI's effectiveness in encoding resolution-agnostic features. At low resolutions, such as 224 × 224 pixels, the model can effectively identify global patterns and broader tissue structures, such as invasive tumour cell nests and ductal linings. As the resolution increases, the model's attention shifts to finer details, focusing on epithelial regions and delineating tumour–stroma boundaries more specifically. UNI's ability to encode information in a resolution-agnostic manner means it can be applied under variable imaging conditions without the need for retraining, making it a versatile and robust foundation model for computational pathology.
 
-![This multi-head self-attention visualisation shows how UNI attends to relevant features at different image resolutions.](@/assets\images\2025\general-purpose-self-supervised-model-for-computational-pathology\resolution_analysis.png)
+![This multi-head self-attention visualisation shows how UNI attends to relevant features at different image resolutions.](@/assets/images/2025/general-purpose-self-supervised-model-for-computational-pathology/resolution_analysis.png)
 
 
 
