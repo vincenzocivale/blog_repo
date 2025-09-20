@@ -2,7 +2,7 @@
 author: Sat Naing
 pubDatetime: 2022-12-28T04:59:04.866Z
 modDatetime: 2025-03-12T13:39:20.763Z
-title: SubCell: Vision foundation models for microscopy capture single-cell biology
+title: SubCell Vision foundation models for microscopy capture single-cell biology
 slug: sub_cell_vision_foundation_models_for_microscopy_capture_single-cell_biology
 featured: false
 draft: false
@@ -20,7 +20,7 @@ description: New feature in AstroPaper v1.4.0, introducing dynamic OG image gene
 
 ## Contesto e obiettivi
 
-Le cellule sono unità fondamentali della vita e organizzano le proprie funzioni attraverso un’architettura subcellulare complessa. Osservare queste strutture richiede strumenti di microscopia a fluorescenza, e interpretarle a grande scala richiede modelli di apprendimento automatico capaci di cogliere sia le morfologie cellulari sia la localizzazione delle proteine. L’**Human Protein Atlas (HPA)** fornisce un dataset ideale: immagini di circa il 65% delle proteine codificanti, in 37 linee cellulari differenti, con annotazioni esperte sulla localizzazione. Tuttavia, la distribuzione proteica è molto eterogenea e variabile, il che rende difficile costruire modelli generalizzabili.
+Le cellule sono unità fondamentali della vita e organizzano le proprie funzioni attraverso un’architettura subcellulare complessa. Osservare queste strutture richiede strumenti di microscopia a fluorescenza, e interpretarle a grande scala richiede modelli di apprendimento automatico capaci di cogliere sia le morfologie cellulari sia la localizzazione delle proteine. 
 
 I metodi supervisionati precedenti hanno mostrato buone prestazioni in compiti specifici, ma poca trasferibilità. Approcci auto-supervisionati come DINO4Cells hanno migliorato la capacità di catturare morfologie generali, ma non hanno raggiunto la precisione dei supervisionati nella localizzazione proteica. L’articolo introduce **SubCell**, una suite di modelli fondamentali auto-supervisionati progettati per superare questi limiti, integrando morfologia e organizzazione proteica in rappresentazioni trasferibili.
 

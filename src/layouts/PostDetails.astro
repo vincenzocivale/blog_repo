@@ -34,6 +34,8 @@ const {
   timezone,
   tags,
   hideEditPost,
+  paperUrl,
+  repoUrl,
 } = post.data;
 
 const { Content } = await render(post);
@@ -110,6 +112,68 @@ const nextPost =
         ]}>|</span
       >
       <EditPost {hideEditPost} {post} class="max-sm:hidden" />
+      {
+        paperUrl && (
+          <span class="flex items-center gap-1 text-sm text-gray-500 hover:text-accent">
+            <span aria-hidden="true" class="max-sm:hidden">|</span>
+            <a
+              href={paperUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-1"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-file-text"
+              >
+                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+                <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                <path d="M10 9H8" />
+                <path d="M16 13H8" />
+                <path d="M16 17H8" />
+              </svg>
+              Read Paper
+            </a>
+          </span>
+        )
+      }
+      {
+        repoUrl && (
+          <span class="flex items-center gap-1 text-sm text-gray-500 hover:text-accent">
+            <span aria-hidden="true" class="max-sm:hidden">|</span>
+            <a
+              href={repoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-1"
+            >
+              <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-github"
+          >
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 3S18.73.65 15 2.5a4.78 4.78 0 0 0-6 0C6.27.65 5.09 3 5.09 3A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+              GitHub Repo
+            </a>
+          </span>
+        )
+      }
     </div>
     <article
       id="article"
