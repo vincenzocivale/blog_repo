@@ -1,5 +1,5 @@
 export const SITE = {
-  website: "https://vincenzocivale.github.io", // replace this with your deployed domain
+  website: "https://vincenzocivale.github.io/blog_repo",
   author: "Vincenzo Yuto Civale",
   profile: "www.linkedin.com/in/vincenzo-civale",
   desc: "A biomedical engineer's notes on interesting insights.",
@@ -12,7 +12,7 @@ export const SITE = {
   showArchives: true,
   showBackButton: true, // show back button in post detail
   editPost: {
-    enabled: true,
+    enabled: false,
     text: "Edit page",
     url: "https://github.com/satnaing/astro-paper/edit/main/",
   },
