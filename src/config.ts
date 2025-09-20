@@ -1,6 +1,6 @@
 export const SITE = {
   website: "https://bm-notebook.netlify.app",
-  base: "/",
+  base: "https://bm-notebook.netlify.app/",
   author: "Vincenzo Yuto Civale",
   profile: "www.linkedin.com/in/vincenzo-civale",
   desc: "A biomedical engineer's notes on interesting insights.",
