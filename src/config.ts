@@ -1,5 +1,5 @@
 export const SITE = {
-  website: "bm-notebook.netlify.app",
+  website: "https://bm-notebook.netlify.app",
   base: "/",
   author: "Vincenzo Yuto Civale",
   profile: "www.linkedin.com/in/vincenzo-civale",
