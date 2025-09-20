@@ -13,14 +13,18 @@ import { SITE } from "./src/config";
 
 import react from "@astrojs/react";
 
+import netlify from "@astrojs/netlify";
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
   base: SITE.base,
   trailingSlash: "always",
+
   integrations: [sitemap({
     filter: page => SITE.showArchives || !page.endsWith("/archives"),
   }), react()],
+
   markdown: {
     remarkPlugins: [remarkToc, [remarkCollapse, { test: "Table of contents" }]],
     shikiConfig: {
@@ -36,6 +40,7 @@ export default defineConfig({
       ],
     },
   },
+
   vite: {
     // eslint-disable-next-line
     // @ts-ignore
@@ -46,10 +51,12 @@ export default defineConfig({
       exclude: ["@resvg/resvg-js"],
     },
   },
+
   image: {
     responsiveStyles: true,
     layout: "constrained",
   },
+
   env: {
     schema: {
       PUBLIC_GOOGLE_SITE_VERIFICATION: envField.string({
@@ -59,7 +66,10 @@ export default defineConfig({
       }),
     },
   },
+
   experimental: {
     preserveScriptOrder: true,
   },
+
+  adapter: netlify(),
 });
