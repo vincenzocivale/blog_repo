@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]        # change 'main' if your default branch has a different name
+    branches: [ master ]        # change 'main' if your default branch has a different name
   workflow_dispatch:          # allows manual run from Actions tab
 
 permissions:
