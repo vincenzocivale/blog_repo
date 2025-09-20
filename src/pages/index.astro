@@ -29,7 +29,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
       </h1>
       <a
         target="_blank"
-        href={SITE.base + "/rss.xml"}
+        href={SITE.website + SITE.base+ "/rss.xml"}
         class="inline-block"
         aria-label="rss feed"
         title="RSS Feed"
@@ -51,7 +51,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         Read the blog posts or check
         <LinkButton
           class="underline decoration-dashed underline-offset-4 hover:text-accent"
-          href={SITE.base + "/about/"}
+          href={SITE.website + SITE.base+ "/about/"}
         >
           About Section
         </LinkButton> for more info.
@@ -100,7 +100,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
     }
 
     <div class="my-8 text-center">
-      <LinkButton href={SITE.base + "/posts/"}>
+      <LinkButton href={SITE.website + SITE.base+ "/posts/"}>
         All Posts
         <IconArrowRight class="inline-block rtl:-rotate-180" />
       </LinkButton>
