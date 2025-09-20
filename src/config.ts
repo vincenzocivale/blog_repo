@@ -1,5 +1,6 @@
 export const SITE = {
-  website: "https://vincenzocivale.github.io/blog_repo",
+  website: "https://vincenzocivale.github.io",
+  base: "/blog_repo",
   author: "Vincenzo Yuto Civale",
   profile: "www.linkedin.com/in/vincenzo-civale",
   desc: "A biomedical engineer's notes on interesting insights.",
