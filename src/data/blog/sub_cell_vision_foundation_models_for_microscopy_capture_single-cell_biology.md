@@ -2,7 +2,7 @@
 author: Sat Naing
 pubDatetime: 2022-12-28T04:59:04.866Z
 modDatetime: 2025-03-12T13:39:20.763Z
-title: SubCell Vision foundation models for microscopy capture single-cell biology
+title: SubCell, vision foundation models for microscopy capture single-cell biology
 slug: sub_cell_vision_foundation_models_for_microscopy_capture_single-cell_biology
 featured: false
 draft: false
@@ -10,6 +10,7 @@ tags:
   - Single-Cell
   - Paper-Review
   - Computer-Vision
+  - Proteomics
 description: SubCell is a suite of vision foundation models that have been trained using self-supervision on the Human Protein Atlas (HPA) image corpus. The aim is to learn a unified representation of single cells that captures both morphology and protein localisation patterns.
 
 paperUrl: https://www.biorxiv.org/content/10.1101/2024.12.06.627299v1.full.pdf
