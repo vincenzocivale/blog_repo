@@ -16,7 +16,7 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
-  base: "/vincenzocivale/blog_repo",
+  base: "/blog_repo",
   integrations: [sitemap({
     filter: page => SITE.showArchives || !page.endsWith("/archives"),
   }), react()],
