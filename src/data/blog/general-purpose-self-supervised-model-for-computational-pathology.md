@@ -12,6 +12,9 @@ tags:
   - Paper-Review
 description:
   UNI is a general-purpose, self-supervised vision model for computational pathology. It was trained on a diverse dataset of over 100 million tissue patches and demonstrating strong data efficiency, the model outperformed baselines with less labelled data and maintained performance across different image resolutions.
+
+paperUrl: https://arxiv.org/abs/2308.15474
+repoUrl: https://github.com/mahmoodlab/UNI
 ---
 
 
