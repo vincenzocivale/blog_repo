@@ -1,9 +1,9 @@
 ---
 author: Sat Naing
-pubDatetime: 2022-12-28T04:59:04.866Z
+pubDatetime: 2025-01-28T04:59:04.866Z
 modDatetime: 2025-03-12T13:39:20.763Z
 title: SubCell, vision foundation models for microscopy capture single-cell biology
-slug: sub_cell_vision_foundation_models_for_microscopy_capture_single-cell_biology
+slug: subcell-self-supervised-foundation-models-for-cell-biology
 featured: false
 draft: false
 tags:

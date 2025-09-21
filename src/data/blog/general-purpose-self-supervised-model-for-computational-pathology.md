@@ -1,9 +1,9 @@
 ---
 author: Sat Naing
-pubDatetime: 2022-09-25T15:20:35Z
+pubDatetime: 2024-09-25T15:20:35Z
 modDatetime: 2025-06-13T16:46:34.155Z
 title: UNI, A General-Purpose Self-Supervised Model for Computational Pathology
-slug: general-purpose-self-supervised-model-for-computational-pathology
+slug: uni-self-supervised-vision-model-for-computational-pathology
 featured: false
 draft: false
 tags:
