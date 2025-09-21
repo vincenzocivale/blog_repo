@@ -15,6 +15,9 @@ import react from "@astrojs/react";
 
 import netlify from "@astrojs/netlify";
 
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
@@ -26,7 +29,8 @@ export default defineConfig({
   }), react()],
 
   markdown: {
-    remarkPlugins: [remarkToc, [remarkCollapse, { test: "Table of contents" }]],
+    remarkPlugins: [remarkMath,remarkToc, [remarkCollapse, { test: "Table of contents" }]],
+    rehypePlugins: [rehypeKatex],
     shikiConfig: {
       // For more themes, visit https://shiki.style/themes
       themes: { light: "min-light", dark: "night-owl" },
