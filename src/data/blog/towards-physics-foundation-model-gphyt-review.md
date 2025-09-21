@@ -9,7 +9,7 @@ draft: false
 tags:
   - Paper-Review
   - Physics-ML
-description: The General Physics Transformer (GPhyT) introduces in-context learning to physics simulations, allowing a single model to infer underlying dynamics from prior physical states and generalize to new conditions without retraining. It achieves a 5x reduction in median MSE compared to a UNet across diverse physics problems and demonstrates zero-shot generalization to novel boundary conditions and physics.
+description: The General Physics Transformer (GP$_{hy}$T) introduces in-context learning to physics simulations, allowing a single model to infer underlying dynamics from prior physical states and generalize to new conditions without retraining. It achieves a 5x reduction in median MSE compared to a UNet across diverse physics problems and demonstrates zero-shot generalization to novel boundary conditions and physics.
 paperUrl: https://arxiv.org/abs/2509.13805
 repoUrl: https://github.com/FloWsnr/General-Physics-Transformer.git
 ---
@@ -17,7 +17,7 @@ repoUrl: https://github.com/FloWsnr/General-Physics-Transformer.git
 
 ## Architecture
 
-The General Physics Transformer (GP$\_{hy}\$T) is a hybrid architecture that combines transformer-based deep learning with classical numerical methods to enable generalisable physics simulation. The model's core innovation is its spatiotemporal transformer architecture, which is designed to learn physical dynamics through in-context learning, a process similar to that used by large language models to adapt to new tasks.
+The General Physics Transformer (GP$_{hy}$T) is a hybrid architecture that combines transformer-based deep learning with classical numerical methods to enable generalisable physics simulation. The model's core innovation is its spatiotemporal transformer architecture, which is designed to learn physical dynamics through in-context learning, a process similar to that used by large language models to adapt to new tasks.
 
 ![architecture](@/assets/images/2025/towards-physics-foundation-model-gphyt-review/architecture.png)
 
