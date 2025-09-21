@@ -1,5 +1,5 @@
 ---
-author: Sat Naing
+author: Vincenzo Civale Yuto
 pubDatetime: 2022-05-23T15:22:00Z
 modDatetime: 2025-08-13T16:52:45.934Z
 title: EAGLE, Deep Learning Framework for Efficient Pathology Image Analysis

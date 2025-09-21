@@ -1,5 +1,5 @@
 ---
-author: Sat Naing
+author: Vincenzo Civale Yuto
 pubDatetime: 2024-09-25T15:20:35Z
 modDatetime: 2025-06-13T16:46:34.155Z
 title: UNI, A General-Purpose Self-Supervised Model for Computational Pathology

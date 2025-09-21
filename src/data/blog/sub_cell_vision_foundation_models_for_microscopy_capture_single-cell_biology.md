@@ -1,5 +1,5 @@
 ---
-author: Sat Naing
+author: Civale Vincenzo Yuto
 pubDatetime: 2025-01-28T04:59:04.866Z
 modDatetime: 2025-03-12T13:39:20.763Z
 title: SubCell, vision foundation models for microscopy capture single-cell biology
