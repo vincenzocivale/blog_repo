@@ -11,7 +11,7 @@ tags:
   - Computer-Vision
   - Paper-Review
 
-description: Merlin is a vision-language foundation model designed for 3D Computed Tomography (CT) scans, which processes volumetric data using a dual-encoder architecture. The model demonstrates superior performance across six diverse downstream tasks, including zero-shot classification, cross-modal retrieval, and automated radiology report generation, highlighting the utility of foundation models for medical imaging.
+description: Merlin is a vision-language foundation model designed for 3D Computed Tomography (CT) scans, which processes volumetric data using a dual-encoder architecture.
 
 paperUrl: https://arxiv.org/abs/2406.06512
 repoUrl: https://github.com/StanfordMIMI/Merlin.git

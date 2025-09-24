@@ -9,7 +9,7 @@ draft: false
 tags:
   - Paper-Review
   - Physics-ML
-description: The General Physics Transformer (GP$_{hy}$T) introduces in-context learning to physics simulations, allowing a single model to infer underlying dynamics from prior physical states and generalize to new conditions without retraining. It achieves a 5x reduction in median MSE compared to a UNet across diverse physics problems and demonstrates zero-shot generalization to novel boundary conditions and physics.
+description: The General Physics Transformer introduces in-context learning to physics simulations, allowing a single model to infer underlying dynamics from prior physical states and generalize to new conditions without retraining. 
 paperUrl: https://arxiv.org/abs/2509.13805
 repoUrl: https://github.com/FloWsnr/General-Physics-Transformer.git
 ---
