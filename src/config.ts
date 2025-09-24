@@ -4,7 +4,7 @@ export const SITE = {
   author: "Vincenzo Yuto Civale",
   profile: "www.linkedin.com/in/vincenzo-civale",
   desc: "A biomedical engineer's notes on interesting insights.",
-  title: "Biomedical Engineering's Log",
+  title: "BME Log",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
