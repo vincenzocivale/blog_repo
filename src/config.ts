@@ -1,10 +1,10 @@
 export const SITE = {
-  website: "https://bme-notebook.netlify.app",
+  website: "https://biomedical-engineering-log.netlify.app",
   base: "/",
   author: "Vincenzo Yuto Civale",
   profile: "www.linkedin.com/in/vincenzo-civale",
   desc: "A biomedical engineer's notes on interesting insights.",
-  title: "BME Notebook",
+  title: "Biomedical Engineering's Log",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
