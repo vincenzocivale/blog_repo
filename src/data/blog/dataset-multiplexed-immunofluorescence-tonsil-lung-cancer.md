@@ -10,9 +10,7 @@ tags:
  - Dataset
  - Immunology
  - Single-Cell
-
 description: A cancer dataset generated with tissue-based cyclic immunofluorescence (t-CyCIF). By combining high-resolution imaging with single-cell data, it reveals the hidden dynamics of tumor ecosystems and the immune microenvironment
-
 paperUrl: https://www.nature.com/articles/s41597-019-0332-y
 repoUrl: https://www.synapse.org/Synapse:syn17865732/wiki/592782
 ---
