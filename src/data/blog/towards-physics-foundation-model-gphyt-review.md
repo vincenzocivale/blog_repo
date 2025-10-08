@@ -14,6 +14,7 @@ paperUrl: https://arxiv.org/abs/2509.13805
 repoUrl: https://github.com/FloWsnr/General-Physics-Transformer.git
 ---
 
+## Table of contents
 
 ## Architecture
 

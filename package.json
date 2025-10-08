@@ -27,6 +27,7 @@
     "lodash.kebabcase": "^4.1.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "rehype-figure": "^1.0.1",
     "rehype-katex": "^7.0.1",
     "remark-collapse": "^0.1.2",
     "remark-math": "^6.0.0",

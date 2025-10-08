@@ -30,7 +30,7 @@ The purpose of this report is to provide a detailed technical overview of the CH
 
 ## CHIEF Model Architecture and Methodology
 
-The strategic importance of CHIEF's foundational architecture cannot be overstated. Its design is a deliberate departure from conventional approaches, aiming to create a single, powerful feature extractor that can be adapted to numerous downstream clinical tasks. This general-purpose philosophy directly confronts the key obstacles that have traditionally limited the utility of computational pathology tools.
+The strategic importance of CHIEF's foundational architecture cannot be overstated. Its design is a deliberate departure from conventional approaches, aiming to create a single, powerful feature extractor that can be adapted to numerous downstream clinical tasks. This general purpose philosophy directly confronts the key obstacles that have traditionally limited the utility of computational pathology tools.
 
 ![Overview.](@/assets/images/2025/chief-foundation-model-cancer-diagnosis-prognosis/overview.png)
 

@@ -17,6 +17,7 @@ paperUrl: https://arxiv.org/abs/2406.06512
 repoUrl: https://github.com/StanfordMIMI/Merlin.git
 ---
 
+## Table of contents
 
 ## Introduction
 
