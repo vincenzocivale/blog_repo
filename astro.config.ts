@@ -13,7 +13,7 @@ import { SITE } from "./src/config";
 
 import react from "@astrojs/react";
 
-import netlify from "@astrojs/netlify";
+
 
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
@@ -75,5 +75,4 @@ export default defineConfig({
     preserveScriptOrder: true,
   },
 
-  adapter: netlify(),
 });

@@ -1,6 +1,6 @@
 export const SITE = {
-  website: "https://biomedical-engineering-log.netlify.app",
-  base: "/",
+  website: "https://vincenzocivale.github.io/blog_repo",
+  base: "/blog_repo",
   author: "Vincenzo Yuto Civale",
   profile: "www.linkedin.com/in/vincenzo-civale",
   desc: "A biomedical engineer's notes on interesting insights.",

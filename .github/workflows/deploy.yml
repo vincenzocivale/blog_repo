@@ -2,37 +2,32 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ master ]        # change 'main' if your default branch has a different name
-  workflow_dispatch:          # allows manual run from Actions tab
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+    branches:
+      - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      - name: Install, build, and upload site
-        uses: withastro/action@v3
-        # optional: uncomment and set custom inputs:
-        # with:
-        #   path: '.'               # if your Astro project is in a subfolder, set that path
-        #   node-version: 20        # optional Node version
-        # env:
-        #   SOME_PUBLIC_VAR: 'value'   # any public env vars
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18" # Or the version your project uses
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+        env:
+          # The base path is set in astro.config.ts, but some actions might need it
+          BASE_PATH: /blog_repo/
+
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
