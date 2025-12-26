@@ -87,7 +87,7 @@ The **zero-shot cross-modal retrieval** evaluates the model's ability to match a
 Understanding the relationship between data, computation, and performance is essential for strategically planning future AI development.
 
 This study empirically derived **power-law relationships** to quantify how model performance improves as the size of the training dataset increases. For instance, the derived power law for zero-shot classification is:
-$$F1_{​}=0.458D^{0.0524}$$
+$$F1_{}=0.458D^{0.0524}$$
 where D is the number of CT scan-report pairs used for pre-training. This finding provides quantitative guidance to estimate the amount of data needed to reach a target performance level, enabling more strategic and cost-effective data curation efforts.
 
 A central finding of this research is that the entire Merlin model was developed using a **single GPU**. This result represents a significant step toward **democratizing foundation model training**, making it a feasible endeavor for healthcare systems and academic centers that typically face severe computational limitations.
