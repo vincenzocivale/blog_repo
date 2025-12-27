@@ -5,8 +5,7 @@ import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import { SITE } from "@/config";
-
-const base = import.meta.env.BASE_URL;
+import "@/assets/search-page.js";
 ---
 
 <Layout title={`Search | ${SITE.title}`}>
@@ -16,61 +15,6 @@ const base = import.meta.env.BASE_URL;
   </Main>
   <Footer />
 </Layout>
-
-<script define:vars={{ base }}>
-  // This needs to be a standard script that runs on each page load,
-  // especially with view transitions.
-  const initPagefind = () => {
-    // Check if the search UI has already been initialized.
-    // If so, do nothing. This can happen with view transitions.
-    if (document.querySelector("#search .pagefind-ui__form")) {
-      return;
-    }
-
-    // @ts-ignore
-    if (typeof PagefindUI !== "undefined") {
-      // @ts-ignore
-      new PagefindUI({
-        element: "#search",
-        showSubResults: true,
-        showImages: false,
-      });
-    } else {
-      // If PagefindUI is not available, wait for the script to load.
-      // This is a fallback for initial page load.
-      document
-        .querySelector(`script[src*="pagefind.js"]`)
-        ?.addEventListener("load", () => {
-          // @ts-ignore
-          new PagefindUI({
-            element: "#search",
-            showSubResults: true,
-            showImages: false,
-          });
-        });
-    }
-  };
-
-  // Run on initial page load
-  initPagefind();
-
-  // Run after view transitions
-  document.addEventListener("astro:after-swap", initPagefind);
-</script>
-
-<!-- This script is what loads the Pagefind UI logic -->
-<script is:inline define:vars={{ base }}>
-  const script = document.createElement("script");
-  // Construct the correct path using the base URL
-  script.src = `${base.replace(/\/$/, "")}/pagefind/pagefind.js`;
-  script.async = true;
-  script.onload = () => {
-    // Once the script is loaded, PagefindUI will be on the window object.
-    // We can dispatch a custom event to let our other script know it's ready.
-    document.dispatchEvent(new Event("pagefind:load"));
-  };
-  document.body.appendChild(script);
-</script>
 
 <style is:global>
   #search {
