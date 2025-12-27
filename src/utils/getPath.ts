@@ -1,5 +1,4 @@
 import { slugifyStr } from "./slugify";
-import { SITE } from "@/config";
 
 /**
  * Get full path of a blog post
@@ -13,11 +12,10 @@ export function getPath(
   _filePath: string | undefined,
   includeBase = true
 ) {
-  const base = SITE.base === "/" ? "" : SITE.base;
-  const postsPath = includeBase ? "/posts" : "";
+  const basePath = includeBase ? "/posts" : "";
 
   // id is like "2025/my-post.md"
-  // we want to get "/blog_repo/posts/2025/my-post"
+  // we want to get "/posts/2025/my-post"
   const slugWithExtension = id;
 
   // Find the last dot and remove the extension
@@ -27,7 +25,5 @@ export function getPath(
   // slugify parts
   const slugParts = slugWithoutExtension.split("/").map(part => slugifyStr(part));
 
-  const finalPath = [base, postsPath, ...slugParts].join("/");
-
-  return finalPath.replace(/\/+/g, "/"); // Prevent multiple slashes
+  return [basePath, ...slugParts].join("/");
 }

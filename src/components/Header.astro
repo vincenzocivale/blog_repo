@@ -10,18 +10,29 @@ import LinkButton from "./LinkButton.astro";
 import { SITE } from "@/config";
 
 const { pathname } = Astro.url;
+const base = import.meta.env.BASE_URL;
 
-// Prepend base to path for comparison
-const getPath = (path: string) => (SITE.base === "/" ? path : SITE.base + path);
+// Helper to create the full path with base
+const getPath = (path: string) => {
+  // ensure path starts with a slash
+  const aPath = path.startsWith("/") ? path : `/${path}`;
+  // remove trailing slash from base and join
+  return `${base.replace(/\/$/, "")}${aPath}`;
+};
 
 // Remove trailing slash from current pathname if exists
 const currentPath =
-  pathname.endsWith("/") && pathname.length > 1 ? pathname.slice(0, -1) : pathname;
+  pathname.endsWith("/") && pathname.length > 1
+    ? pathname.slice(0, -1)
+    : pathname;
 
 const isActive = (path: string) => {
-  const newPath = getPath(path);
-  if (newPath === getPath("/")) return currentPath === newPath;
-  return currentPath.startsWith(newPath);
+  const fullPath = getPath(path);
+  // Special case for root, to avoid matching all pages
+  if (fullPath === base.replace(/\/$/, "")) {
+    return currentPath === fullPath;
+  }
+  return currentPath.startsWith(fullPath);
 };
 ---
 
@@ -71,17 +82,26 @@ const isActive = (path: string) => {
           ]}
         >
           <li class="col-span-2">
-            <a href={getPath("/posts")} class:list={{ "active-nav": isActive("/posts") }}>
+            <a
+              href={getPath("/posts")}
+              class:list={{ "active-nav": isActive("/posts") }}
+            >
               Posts
             </a>
           </li>
           <li class="col-span-2">
-            <a href={getPath("/tags")} class:list={{ "active-nav": isActive("/tags") }}>
+            <a
+              href={getPath("/tags")}
+              class:list={{ "active-nav": isActive("/tags") }}
+            >
               Tags
             </a>
           </li>
           <li class="col-span-2">
-            <a href={getPath("/about")} class:list={{ "active-nav": isActive("/about") }}>
+            <a
+              href={getPath("/about")}
+              class:list={{ "active-nav": isActive("/about") }}
+            >
               About
             </a>
           </li>
