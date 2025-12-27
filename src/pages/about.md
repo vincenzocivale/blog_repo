@@ -7,7 +7,7 @@ title: "About"
 
 I'm a PhD student in Biomedical Engineering, with a focus on applying machine learning techniques to provide personalized diagnostic systems. My work spans from **computer vision** on histological images to models based on **omics data**.
 
-This blog, **BME Log**, is my personal log of what I'm currently studying and working on.
+This blog, **AI x BIO Notes**, is my personal log of what I'm currently studying and working on.
 
 ## The Purpose of This Blog
 
