@@ -6,92 +6,74 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import { SITE } from "@/config";
 
-const backUrl = SITE.showBackButton ? `${Astro.url.pathname}` : "/";
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title={`Search | ${SITE.title}`}>
   <Header />
   <Main pageTitle="Search" pageDesc="Search any article ...">
-    <div id="pagefind-search" transition:persist data-backurl={backUrl}></div>
+    <div id="search" transition:persist></div>
   </Main>
   <Footer />
 </Layout>
 
-<script>
-  function initSearch() {
-    const pageFindSearch: HTMLElement | null =
-      document.querySelector("#pagefind-search");
+<script define:vars={{ base }}>
+  // This needs to be a standard script that runs on each page load,
+  // especially with view transitions.
+  const initPagefind = () => {
+    // Check if the search UI has already been initialized.
+    // If so, do nothing. This can happen with view transitions.
+    if (document.querySelector("#search .pagefind-ui__form")) {
+      return;
+    }
 
-    if (!pageFindSearch) return;
-
-    const params = new URLSearchParams(window.location.search);
-
-    const onIdle = window.requestIdleCallback || (cb => setTimeout(cb, 1));
-
-    onIdle(async () => {
-      // @ts-expect-error — Missing types for @pagefind/default-ui package.
-      const { PagefindUI } = await import("@pagefind/default-ui");
-
-      // Display warning inn dev mode
-      if (import.meta.env.DEV) {
-        pageFindSearch.innerHTML = `
-            <div class="bg-muted/75 rounded p-4 space-y-4 mb-4">
-              <p><strong>DEV mode Warning! </strong>You need to build the project at least once to see the search results during development.</p>
-              <code class="block bg-black text-white px-2 py-1 rounded">pnpm run build</code>
-            </div>
-          `;
-      }
-
-      // Init pagefind ui
-      const search = new PagefindUI({
-        element: "#pagefind-search",
-        bundlePath: `${import.meta.env.BASE_URL.replace(/\/$/, "")}/pagefind/`,
+    // @ts-ignore
+    if (typeof PagefindUI !== "undefined") {
+      // @ts-ignore
+      new PagefindUI({
+        element: "#search",
         showSubResults: true,
         showImages: false,
-        processTerm: function (term: string) {
-          params.set("q", term); // Update the `q` parameter in the URL
-          history.replaceState(history.state, "", "?" + params.toString()); // Push the new URL without reloading
-
-          const backUrl = pageFindSearch?.dataset?.backurl;
-          sessionStorage.setItem("backUrl", backUrl + "?" + params.toString());
-
-          return term;
-        },
       });
+    } else {
+      // If PagefindUI is not available, wait for the script to load.
+      // This is a fallback for initial page load.
+      document
+        .querySelector(`script[src*="pagefind.js"]`)
+        ?.addEventListener("load", () => {
+          // @ts-ignore
+          new PagefindUI({
+            element: "#search",
+            showSubResults: true,
+            showImages: false,
+          });
+        });
+    }
+  };
 
-      // If search param exists (eg: search?q=astro), trigger search
-      const query = params.get("q");
-      if (query) {
-        search.triggerSearch(query);
-      }
+  // Run on initial page load
+  initPagefind();
 
-      // Reset search param if search input is cleared
-      const searchInput = document.querySelector(".pagefind-ui__search-input");
-      const clearButton = document.querySelector(".pagefind-ui__search-clear");
-      searchInput?.addEventListener("input", resetSearchParam);
-      clearButton?.addEventListener("click", resetSearchParam);
+  // Run after view transitions
+  document.addEventListener("astro:after-swap", initPagefind);
+</script>
 
-      function resetSearchParam(e: Event) {
-        if ((e.target as HTMLInputElement)?.value.trim() === "") {
-          history.replaceState(history.state, "", window.location.pathname);
-        }
-      }
-    });
-  }
-
-  document.addEventListener("astro:after-swap", () => {
-    const pagefindSearch = document.querySelector("#pagefind-search");
-
-    // if pagefind search form already exists, don't initialize search component
-    if (pagefindSearch && pagefindSearch.querySelector("form")) return;
-
-    initSearch();
-  });
-  initSearch();
+<!-- This script is what loads the Pagefind UI logic -->
+<script is:inline define:vars={{ base }}>
+  const script = document.createElement("script");
+  // Construct the correct path using the base URL
+  script.src = `${base.replace(/\/$/, "")}/pagefind/pagefind.js`;
+  script.async = true;
+  script.onload = () => {
+    // Once the script is loaded, PagefindUI will be on the window object.
+    // We can dispatch a custom event to let our other script know it's ready.
+    document.dispatchEvent(new Event("pagefind:load"));
+  };
+  document.body.appendChild(script);
 </script>
 
 <style is:global>
-  #pagefind-search {
+  #search {
     --pagefind-ui-font: var(--font-mono);
     --pagefind-ui-text: var(--foreground);
     --pagefind-ui-background: var(--background);
