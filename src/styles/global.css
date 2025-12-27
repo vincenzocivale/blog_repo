@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "./typography.css";
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant different (&:where([data-theme=dark], [data-theme=dark] *));
 :root,
 html[data-theme="light"] {
   --background: #fdfdfd;
@@ -33,26 +33,24 @@ html[data-theme="dark"] {
     @apply overflow-y-scroll scroll-smooth;
   }
   body {
-    /* MODIFICATO: rimosso font-mono, aggiunto font-sans e proprietà per leggibilità */
-    @apply flex min-h-svh flex-col bg-background font-sans text-foreground selection:bg-accent/75 selection:text-background;
+    @apply flex min-h-svh flex-col bg-background font-mono text-foreground selection:bg-accent/75 selection:text-background;
+  }
+  
+  /* AGGIUNTO: solo per il contenuto degli articoli */
+  article,
+  article p,
+  article li,
+  article div:not(pre div) {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-size: 18px;
     line-height: 1.7;
   }
   
-  /* AGGIUNTO: mantieni monospace solo per codice */
-  code,
-  pre,
-  kbd,
-  samp {
+  /* Mantieni monospace per codice anche negli articoli */
+  article code,
+  article pre {
     font-family: "Courier New", Courier, monospace;
     font-size: 0.9em;
-  }
-  
-  /* AGGIUNTO: titoli con il font sans-serif */
-  h1, h2, h3, h4, h5, h6 {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-weight: 600;
   }
   
   a,
