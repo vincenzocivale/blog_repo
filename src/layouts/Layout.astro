@@ -45,6 +45,8 @@ const structuredData = {
     },
   ],
 };
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <!doctype html>
@@ -136,7 +138,7 @@ const structuredData = {
         href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
       />
   </head>
-  <body>
+  <body data-pagefind-options={`{"baseUrl": "${base}"}`}>
     <slot />
   </body>
 </html>
