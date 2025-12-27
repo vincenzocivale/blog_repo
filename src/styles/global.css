@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "./typography.css";
-
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
-
 :root,
 html[data-theme="light"] {
   --background: #fdfdfd;
@@ -11,7 +9,6 @@ html[data-theme="light"] {
   --muted: #e6e6e6;
   --border: #ece9e9;
 }
-
 html[data-theme="dark"] {
   --background: #212737;
   --foreground: #eaedf3;
@@ -19,7 +16,6 @@ html[data-theme="dark"] {
   --muted: #343f60;
   --border: #ab4b08;
 }
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -27,7 +23,6 @@ html[data-theme="dark"] {
   --color-muted: var(--muted);
   --color-border: var(--border);
 }
-
 @layer base {
   * {
     @apply border-border outline-accent/75;
@@ -38,8 +33,28 @@ html[data-theme="dark"] {
     @apply overflow-y-scroll scroll-smooth;
   }
   body {
-    @apply flex min-h-svh flex-col bg-background font-mono text-foreground selection:bg-accent/75 selection:text-background;
+    /* MODIFICATO: rimosso font-mono, aggiunto font-sans e proprietà per leggibilità */
+    @apply flex min-h-svh flex-col bg-background font-sans text-foreground selection:bg-accent/75 selection:text-background;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
   }
+  
+  /* AGGIUNTO: mantieni monospace solo per codice */
+  code,
+  pre,
+  kbd,
+  samp {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.9em;
+  }
+  
+  /* AGGIUNTO: titoli con il font sans-serif */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 600;
+  }
+  
   a,
   button {
     @apply outline-offset-1 outline-accent focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-dashed;
@@ -53,15 +68,12 @@ html[data-theme="dark"] {
     @apply mx-auto max-w-app px-4;
   }
 }
-
 @utility max-w-app {
   @apply max-w-3xl;
 }
-
 .active-nav {
   @apply underline decoration-wavy decoration-2 underline-offset-4;
 }
-
 /* Source: https://piccalil.li/blog/a-more-modern-css-reset/ */
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
